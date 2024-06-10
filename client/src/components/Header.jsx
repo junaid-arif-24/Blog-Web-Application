@@ -18,7 +18,7 @@ function Header() {
             <Button color="gray" className='w-12 h-10 ' pill>
                 <FaMoon/>
             </Button>
-            <Button gradientDuoTone={"purpleToBlue"}>
+            <Button gradientDuoTone={"purpleToBlue"} outline >
                 Sign In
             </Button>
             <Navbar.Toggle/>
@@ -41,6 +41,7 @@ function Header() {
             </Navbar.Link>
 
         </Navbar.Collapse>
+       
     </Navbar>
   )
 }
