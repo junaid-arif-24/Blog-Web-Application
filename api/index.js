@@ -13,4 +13,12 @@ mongoose.connect(process.env.MONGOURL).then(()=>{
 })
 app.use('/api/user',userRoute )
 app.use('/api/auth', authRoute)
+app.use((error, req, res, next) => {
+    const status = error.statusCode || 500;
+    const message = error.message;
+    const data = error.data;
+    res.status(status).json({ success: false, status, message: message});  
+}
+
+)
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
